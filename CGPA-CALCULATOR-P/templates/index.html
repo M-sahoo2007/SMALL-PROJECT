@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="app-wrapper">
+
+    <!-- Dark mode toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="darkToggle">
+        <label for="darkToggle">🌙</label>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+
+                <div class="card glass-card animate-in">
+                    <div class="card-body p-4">
+
+                        <h1 class="text-center mb-1">CGPA Calculator</h1>
+                        <p class="subtitle text-center mb-4">
+                            Simple • Fast • Accurate
+                        </p>
+
+                        <form method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control" name="name"
+                                       placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Total SGPA</label>
+                                <input type="number" step="0.01" class="form-control"
+                                       name="sgpa" placeholder="e.g. 68.5" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Total Semesters</label>
+                                <input type="number" class="form-control"
+                                       name="semester" placeholder="e.g. 8" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                Calculate CGPA
+                            </button>
+                        </form>
+
+                        {% if cgpa %}
+                        <div class="result-box text-center mt-4 animate-pop">
+                            <h5>Hello {{ name }} 👋</h5>
+                            <p>Your CGPA</p>
+                            <div class="cgpa-value">{{ cgpa }}</div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Dark mode script -->
+<script>
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+</script>
+
+</body>
+</html>

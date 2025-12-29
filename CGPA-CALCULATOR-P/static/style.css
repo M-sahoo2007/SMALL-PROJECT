@@ -1,0 +1,158 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: background 0.4s ease;
+}
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* CARD */
+.glass-card {
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    border: none;
+}
+
+/* TEXT */
+h1 {
+    font-weight: 700;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+/* BUTTON */
+.btn-primary {
+    background: #667eea;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background: #5a67d8;
+}
+
+/* RESULT */
+.result-box {
+    background: #f4f6ff;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.result-box p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.cgpa-value {
+    font-size: 38px;
+    font-weight: 800;
+    color: #667eea;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.dark-mode .glass-card {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+.dark-mode h1,
+.dark-mode label,
+.dark-mode .subtitle {
+    color: #e5e7eb;
+}
+
+.dark-mode .form-control {
+    background: #020617;
+    color: #e5e7eb;
+    border-color: #334155;
+}
+
+.dark-mode .result-box {
+    background: #020617;
+}
+
+.dark-mode .cgpa-value {
+    color: #38bdf8;
+}
+
+/* TOGGLE */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.theme-toggle label {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* ANIMATIONS */
+.animate-in {
+    animation: fadeSlide 0.6s ease forwards;
+}
+
+.animate-pop {
+    animation: pop 0.4s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .cgpa-value {
+        font-size: 32px;
+    }
+}
