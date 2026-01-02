@@ -50,10 +50,10 @@ def index():
         mark = mark_view(name, semester, sgpa)
         cgpa = mark.calculate_cgpa()
 
-        with open("CGPA-CALCULATOR-P\data.txt", "a+") as f:
+        with open("D:\pratic\python\SMALL-PROJECT\CGPA-CALCULATOR-P\data.txt", "a+") as f:
             f.write(f"Name: {name}, Semester: {semester},Sgpa:{sgpa} CGPA: {cgpa}\n")
 
     return render_template("index.html", cgpa=cgpa, name=name)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=7860)
+    app.run(debug=True, host="0.0.0.0", port=5000)
